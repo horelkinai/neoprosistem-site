@@ -1,0 +1,11 @@
+{
+  "timestamp": "2026-08-08T00:53:01.250Z",
+  "projectRoot": "/root/Documents/Codex/2026-08-07/https-chat-deepseek-com-share-jpgfbrvs24jhsftugx-2",
+  "structure": {
+    "hasPackageJson": false,
+    "hasTsConfig": false,
+    "hasClaudeConfig": true,
+    "hasClaudeFlow": true
+  },
+  "scannedAt": 1786150381255
+}

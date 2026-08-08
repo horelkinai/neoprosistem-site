@@ -1,0 +1,18 @@
+{
+  "tasks": {
+    "task-1786141419117-qi3s21": {
+      "taskId": "task-1786141419117-qi3s21",
+      "type": "implementation",
+      "description": "Боковая панель контактов + ИИ-чат для вопросов (NEO PRO SISTEM)",
+      "priority": "normal",
+      "status": "completed",
+      "progress": 100,
+      "assignedTo": [],
+      "tags": [],
+      "createdAt": "2026-08-07T22:23:39.117Z",
+      "startedAt": "2026-08-07T22:23:39.117Z",
+      "completedAt": "2026-08-08T01:35:00.000Z"
+    }
+  },
+  "version": "3.0.0"
+}
