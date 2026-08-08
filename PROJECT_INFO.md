@@ -13,7 +13,8 @@
 
 - Путь: `/root/Documents/Codex/2026-08-07/https-chat-deepseek-com-share-jpgfbrvs24jhsftugx-2`
 - Текущий рабочий каталог (`img-20260807-205154-968-jpg-640-3`) **пустой** — проект в соседней папке выше.
-- Git-репозитория нет (папка не под `.git`).
+- **Git-репозиторий**: `https://github.com/horelkinai/neoprosistem-site` (ветка `main`, деплой через GitHub Actions).
+- **Живой сайт (GitHub Pages)**: `https://horelkinai.github.io/neoprosistem-site/` — публичный, все страницы 200, проверен в Playwright.
 
 ## Технологии
 
@@ -44,6 +45,8 @@ robots.txt, sitemap.xml — SEO-файлы (канонический домен 
 tools/gen_pages.py  — генератор подстраниц из секций index.html
 make_seo.py         — генератор SEO-мета/JSON-LD
 ANALYTICS-SETUP.md  — инструкция по подключению Метрики, GA4, вебмастеров (сниппеты готовы)
+README.md           — краткое описание и ссылки
+.github/workflows/pages.yml — GitHub Actions: автодеплой на Pages при push в main
 PROJECT_INFO.md     — этот файл
 AGENTS.md           — инструкции для будущих ИИ-чатов
 ```
@@ -137,6 +140,9 @@ AGENTS.md           — инструкции для будущих ИИ-чато
   - Всем `certificate.png` в лайтбоксах добавлены `width/height` и `loading="lazy"`.
   - В `index.html` добавлен `<link rel="preload" as="image" href="assets/slide-1.jpg" fetchpriority="high">`.
 - **Контент/SEO**: на главную вернулась FAQ-секция (8 вопросов, аккордеон) + `FAQPage` JSON-LD в `@graph` (валиден). `sitemap.xml` обновлён (`lastmod` 2026-08-08).
+- **Картинки**: слайды и превью сертификата переведены на WebP (`slide-1.webp`/`slide-2.webp` + мобильные `-480w.webp`, `certificate-preview.webp`, `og-image.webp`) с `srcset`/`sizes`; preload теперь на `slide-1.webp`.
+- **Доступность**: исправлен контраст (`.logo-caption`, `.hero-badge`, `.hero-founder-cert`, `.section-kicker`, `.diag-note`, `.form-success strong`) — Accessibility 100.
+- **Lighthouse 08.08.2026**: SEO 100, Best Practices 100, Accessibility 100, Performance 74 (мешает отсутствие сжатия на http.server/GitHub Pages — на реальном хостинге с gzip/brotli будет выше).
 - **Аналитика**: `ANALYTICS-SETUP.md` — готовые сниппеты Яндекс.Метрики, GA4, инструкции по Google Search Console, Яндекс.Вебмастеру, PageSpeed, локальным карточкам. Для активации клиенту нужны свои ID.
 - Удалён неиспользуемый `assets/photo.jpg` (110 КБ).
 
@@ -152,7 +158,9 @@ python3 -m http.server 8080 --bind 127.0.0.1
 
 Проверка страниц: `curl -s -o /dev/null -w '%{http_code}\n' http://127.0.0.1:8080/index.html` (ожидается 200 на всех страницах и ассетах).
 
-Публичный доступ: временный туннель Cloudflare (`cloudflared tunnel --url http://127.0.0.1:8080`). Активный туннель (поднят 08.08.2026, проверен — отвечает 200): `https://bearing-wichita-repeat-plays.trycloudflare.com` — временный, при перезапуске ссылка меняется.
+Публичный доступ:
+- **GitHub Pages (основной, с 08.08.2026)**: `https://horelkinai.github.io/neoprosistem-site/` — репозиторий `horelkinai/neoprosistem-site`, push в `main` автоматически деплоит через `.github/workflows/pages.yml`.
+- Временный туннель Cloudflare (опционально): `cloudflared tunnel --url http://127.0.0.1:8080` — ссылка меняется при каждом запуске.
 
 ## Генераторы
 
