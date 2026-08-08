@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://neoprosistem.by/sitemap.xml
+Sitemap: https://horelkinai.github.io/sitemap.xml

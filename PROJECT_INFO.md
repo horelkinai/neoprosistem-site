@@ -13,8 +13,8 @@
 
 - Путь: `/root/Documents/Codex/2026-08-07/https-chat-deepseek-com-share-jpgfbrvs24jhsftugx-2`
 - Текущий рабочий каталог (`img-20260807-205154-968-jpg-640-3`) **пустой** — проект в соседней папке выше.
-- **Git-репозиторий**: `https://github.com/horelkinai/neoprosistem-site` (ветка `main`, деплой через GitHub Actions).
-- **Живой сайт (GitHub Pages)**: `https://horelkinai.github.io/neoprosistem-site/` — публичный, все страницы 200, проверен в Playwright.
+- **Git-репозиторий**: `https://github.com/horelkinai/horelkinai.github.io` (ветка `main`, деплой через GitHub Actions).
+- **Живой сайт (GitHub Pages)**: `https://horelkinai.github.io/` — публичный, все страницы 200, проверен в Playwright.
 
 ## Технологии
 
@@ -159,7 +159,7 @@ python3 -m http.server 8080 --bind 127.0.0.1
 Проверка страниц: `curl -s -o /dev/null -w '%{http_code}\n' http://127.0.0.1:8080/index.html` (ожидается 200 на всех страницах и ассетах).
 
 Публичный доступ:
-- **GitHub Pages (основной, с 08.08.2026)**: `https://horelkinai.github.io/neoprosistem-site/` — репозиторий `horelkinai/neoprosistem-site`, push в `main` автоматически деплоит через `.github/workflows/pages.yml`.
+- **GitHub Pages (основной, с 08.08.2026)**: `https://horelkinai.github.io/` — репозиторий `horelkinai/horelkinai.github.io` (основной, корневой адрес) + зеркало `horelkinai/neoprosistem-site`, push в `main` автоматически деплоит через `.github/workflows/pages.yml`.
 - Временный туннель Cloudflare (опционально): `cloudflared tunnel --url http://127.0.0.1:8080` — ссылка меняется при каждом запуске.
 
 ## Генераторы
