@@ -42,14 +42,15 @@
 ```
 
 ## 3. Google Search Console
-1. https://search.google.com/search-console → Добавить ресурс (домен `neoprosistem.by`).
-2. Подтверждение доменом: у хостинга добавьте DNS-запись TXT (выдаёт консоль).
-3. Отправьте карту сайта: `https://neoprosistem.by/sitemap.xml`.
+1. https://search.google.com/search-console → **Добавить ресурс** → тип **Префикс URL** → `https://horelkinai.github.io/neoprosistem-site/` (сейчас сайт живёт там; когда подключите `neoprosistem.by` — добавьте и его как второй ресурс или тип «Домен»).
+2. Подтверждение — проще всего **HTML-файл**: Google покажет файл вида `google1234567890.html` со строкой `google-site-verification: google1234567890.html`. Положите этот файл в корень репозитория (рядом с `index.html`) и запушите — он появится на сайте по адресу `https://horelkinai.github.io/neoprosistem-site/google1234567890.html`. Кодекс может положить файл сам, если прислать токен.
+   - Альтернатива для домена: DNS-запись TXT (когда появится доступ к DNS `neoprosistem.by`).
+3. После подтверждения отправьте карту сайта: `https://horelkinai.github.io/neoprosistem-site/sitemap.xml` (после подключения домена — `https://neoprosistem.by/sitemap.xml`).
 
 ## 4. Яндекс.Вебмастер
-1. https://webmaster.yandex.ru/ → Добавить сайт `https://neoprosistem.by`.
-2. Подтверждение: HTML-файл или TXT-запись (выдаёт Вебмастер).
-3. Отправьте карту сайта `https://neoprosistem.by/sitemap.xml`.
+1. https://webmaster.yandex.ru/ → **Добавить сайт**: `https://horelkinai.github.io/neoprosistem-site/` (пока нет своего домена; потом добавьте `https://neoprosistem.by/`).
+2. Подтверждение: **HTML-файл** (Вебмастер выдаст `yandex_XXXXXXXX.html` — положить в корень репозитория и запушить) или **мета-тег** `<meta name="yandex-verification" content="XXXX" />` (вставить в `<head>` — можно попросить Кодекса).
+3. Отправьте карту сайта `https://horelkinai.github.io/neoprosistem-site/sitemap.xml`.
 4. Раздел «Подбор запросов» → соберите семантику и добавьте в «Список запросов» для отслеживания.
 
 ## 5. Проверка скорости
